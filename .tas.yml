@@ -19,6 +19,6 @@ postRun:
     - node --version
 configFile: scripts/jest/config.source-www.js
 nodeVersion: 14.17.6
-parallelism: 2
-splitMode: file
+# parallelism: 2
+# splitMode: file
 version: 1.0.1
