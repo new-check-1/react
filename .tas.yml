@@ -1,24 +1,23 @@
+---
 framework: jest
-postMerge:
-  env:
-      NODE_ENV: development
-      npm_lifecycle_event: test
-  pattern:
-    - "{packages,scripts}/**/__tests__/*{.js,.coffee,[!d].ts}"
+preRun:
+  command:
+    - yarn
 preMerge:
   env:
     NODE_ENV: development
     npm_lifecycle_event: test
   pattern:
     - "{packages,scripts}/**/__tests__/*{.js,.coffee,[!d].ts}"
-preRun:
-  command:
-    - yarn install --frozen-lockfile
+postMerge:
+  env:
+      NODE_ENV: development
+      npm_lifecycle_event: test
+  pattern:
+    - "{packages,scripts}/**/__tests__/*{.js,.coffee,[!d].ts}"
 postRun:
   command:
     - node --version
 configFile: scripts/jest/config.source-www.js
 nodeVersion: 14.17.6
-parallelism: 2
-splitMode: file
-version: 1.0.1
+version: 1.0
